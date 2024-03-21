@@ -1,0 +1,12 @@
+.cell {
+    border: 1px solid black;
+    width: 100%;
+    height: 100%;
+    font-size: 6rem;
+    cursor: pointer;
+    &:disabled {
+        opacity: .75;
+        background: lightgray;
+        cursor: not-allowed;
+    }
+}

@@ -1,12 +1,20 @@
 import { useState } from 'react';
 import './App.scss';
+import Alert from './components/Alert';
+import Grid from './components/Grid';
+import Header from './components/Header';
+import useGrid from './hooks/useGrid';
+
+// const INIT_GRID = [
+//   ['', '', ''],
+//   ['', '', ''],
+//   ['', '', '']
+// ]
 
 function App() {
-  const [grid, setGrid] = useState([
-    ['', '', ''],
-    ['', '', ''],
-    ['', '', '']
-  ]);
+
+  // const [grid, setGrid] = useState(INIT_GRID);
+  const { grid, setGrid } = useGrid();
 
   const [ turn, setTurn] = useState('X');
   const [ winner, setWinner ] = useState<string|null>(null);
@@ -70,42 +78,14 @@ function App() {
 
   return (
     <>
-      <h1>Tic Tac Toe</h1>
-      <div>
-        {
-          grid.map((row,indexRow ) => {
-            return row.map( (cell, indexCol)=> (
-              <button 
-                key={`${indexRow}${indexCol}`} 
-                className="cell" 
-                onClick={()=>handleOnClick(indexRow,indexCol)} 
-                disabled={!!cell}
-              >
-                {cell}
-              </button>
-            ))
-          })
-        }
-      </div>
-
+      <Header />
+      <Grid grid={grid} handleOnClick={handleOnClick} />
       {
-        winner && (<div>          
-          <h1> 
-            { winner } 
-          </h1>         
-          <strong>winner!👏🏻</strong> 
-        </div>)
-      }
-
-      {        
-        !winner && grid.every( row => row.every( cell => cell !== '')) && (
-          <div>
-            <h1> 
-              <span>XO</span>
-              <strong>Draw</strong> 
-            </h1>
-          </div>
-        )
+         winner 
+          ? <Alert mainText={winner} subText={'winner!'} />
+          : grid.every( row => row.every( cell => cell !== ''))
+             && <Alert mainText={'XO'} subText={'draw'} /> 
+             
       }
     </>
   )

@@ -69,20 +69,5 @@
 		grid-template-columns: repeat(3, 1fr);
 		width: 100%;
 		background: turquoise;
-
-		.cell {
-			border: 1px solid black;
-			width: 100%;
-			height: 100%;
-			// min-width: 148px;
-			// min-height: 148px;
-			font-size: 6rem;
-			cursor: pointer;
-			&:disabled {
-				opacity: .75;
-				background: lightgray;
-				cursor: not-allowed;
-			}
-		}
 	}
 }
