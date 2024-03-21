@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const INIT_GRID = [
+export const INIT_GRID = [
 	["", "", ""],
 	["", "", ""],
 	["", "", ""],

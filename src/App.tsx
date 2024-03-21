@@ -26,14 +26,21 @@ function App() {
   return (
     <>
       <Header />
-      <Grid grid={grid} handleOnClick={handleOnClick} />
-      {
-         winner 
-          ? <Alert mainText={winner} subText={'winner!'} />
-          : grid.every( row => row.every( cell => cell !== ''))
-             && <Alert mainText={'XO'} subText={'draw'} /> 
-             
-      }
+        <Grid 
+          grid={grid} 
+          handleOnClick={handleOnClick} 
+          isGameFinished={ 
+            !!winner || 
+            grid.every( row => row.every( cell => cell !== ''))
+          }
+        />
+        {
+          winner 
+            ? <Alert mainText={winner} subText={'winner!'} />
+            : grid.every( row => row.every( cell => cell !== ''))
+              && <Alert mainText={'XO'} subText={'draw'} /> 
+              
+        }
     </>
   )
 }

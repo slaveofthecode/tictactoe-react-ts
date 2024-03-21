@@ -1,16 +1,24 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useState } from "react";
 
 type Props = {
     mainText: string,
     subText: string
 }
 
-const index = ({ mainText, subText}: Props) => {
-  return (
-    <div>
-        <span>{ mainText }</span>
-        <strong>{ subText }</strong> 
-    </div>
-  )
+const Alert = ({ mainText, subText}: Props) => {
+
+  const [ show, setShow ] = useState<boolean>(!!mainText);
+
+  if (!show) return null;
+
+  if (show)
+    return (
+      <div className="alert-container" onClick={()=>setShow(false)}>
+          <span>{ mainText }</span>
+          <strong>{ subText }</strong> 
+      </div>
+    );
 }
 
-export default index
+export default Alert

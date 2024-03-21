@@ -2,12 +2,13 @@ import Button from '../common/Button'
 
 type Props = {
     grid: string[][],
-    handleOnClick: (r: number, c: number) => void
+    handleOnClick: (r: number, c: number) => void,
+    isGameFinished: boolean
 }
 
-const index = ({ grid, handleOnClick} : Props) => {
+const index = ({ grid, handleOnClick, isGameFinished} : Props) => {
   return (
-    <div>
+    <div className={`${isGameFinished ? 'blur' : ''}`} >
         {
           grid.map((row: string[],indexRow: number ) => {
             return row.map( (cell, indexCol)=> (
@@ -24,12 +25,3 @@ const index = ({ grid, handleOnClick} : Props) => {
 }
 
 export default index
-
-{/* <button 
-                key={`${indexRow}${indexCol}`} 
-                className="cell" 
-                onClick={()=>handleOnClick(indexRow,indexCol)} 
-                disabled={!!cell}
-              >
-                {cell}
-              </button> */}

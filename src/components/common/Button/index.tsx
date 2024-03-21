@@ -9,7 +9,7 @@ type Props = {
 const index = ({ id, onClick, text }: Props) => {
   return (
     <>
-        <button 
+        <button
             key={id} 
             className={styles.cell}
             onClick={onClick} 
