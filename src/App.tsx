@@ -1,33 +1,112 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
+import './App.scss';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [grid, setGrid] = useState([
+    ['', '', ''],
+    ['', '', ''],
+    ['', '', '']
+  ]);
+
+  const [ turn, setTurn] = useState('X');
+  const [ winner, setWinner ] = useState<string|null>(null);
+
+  const handleOnClick = (indexRow:number, indexCol:number) => {    
+    setTurn( t => t === 'X' ? 'O' : 'X');
+
+    const clonGrid = grid;
+    clonGrid[indexRow][indexCol] = turn;  
+    setGrid(clonGrid);
+
+    validateWinner();
+
+  }
+
+  function validateWinner() {
+      const validationInline = () => {
+        let result = false;        
+
+        for (let i = 0; i < 3; i++) {
+          if ( !result && grid[i][0] !== '') {
+            result = grid[i][0] === grid[i][1] && grid[i][1] === grid[i][2]
+            result && setWinner(grid[i][0]);
+          }
+        }
+        
+        return result;
+      }
+
+      const validateBlock = () => {
+        let result = false; 
+        
+        for (let i = 0; i < 3; i++) {
+          if ( !result && grid[0][i] !== '') {
+            result = grid[0][i] === grid[1][i] && grid[1][i] === grid[2][i]             
+            result && setWinner(grid[0][i]);
+          }
+        }
+
+        return result;
+      }
+
+      const validateDiagonal = () => {
+        let result = false;
+
+        if ( grid[1][1] !== '') {
+          const val = grid[1][1];
+
+          result = val === grid[0][0] && val === grid[2][2] ||
+                   val === grid[2][0] && val === grid[0][2]
+
+          result && setWinner(val);            
+        }
+
+        return result;
+      }
+
+      return validationInline() || validateBlock() || validateDiagonal();
+    
+  }
 
   return (
     <>
+      <h1>Tic Tac Toe</h1>
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        {
+          grid.map((row,indexRow ) => {
+            return row.map( (cell, indexCol)=> (
+              <button 
+                key={`${indexRow}${indexCol}`} 
+                className="cell" 
+                onClick={()=>handleOnClick(indexRow,indexCol)} 
+                disabled={!!cell}
+              >
+                {cell}
+              </button>
+            ))
+          })
+        }
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+
+      {
+        winner && (<div>          
+          <h1> 
+            { winner } 
+          </h1>         
+          <strong>winner!👏🏻</strong> 
+        </div>)
+      }
+
+      {        
+        !winner && grid.every( row => row.every( cell => cell !== '')) && (
+          <div>
+            <h1> 
+              <span>XO</span>
+              <strong>Draw</strong> 
+            </h1>
+          </div>
+        )
+      }
     </>
   )
 }
