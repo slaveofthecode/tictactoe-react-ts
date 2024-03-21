@@ -1,7 +1,11 @@
+:root {
+	--box-size: 200px;
+}
+
 #root {
 	background: transparent;
 	width: 100%;
-	height: calc(100vh - (4rem * 2));
+	// height: calc(100vh - (4rem * 2));
 	color: #fff;
 	display: flex;
 	justify-content: center;
@@ -9,28 +13,27 @@
 	flex-direction: column;
 	max-width: 580px;
 	max-height: 720px;
-	margin: auto;
+	font-family: 'SlacksideOne-Regular';
 
-	> h1 {
-		font-size: 3.2em;
-		line-height: 1.1;
-		padding: 1rem;
-		width: 100%;
+	> h1 {		
 		font-size: 6rem;
 		text-align: center;
-		color: #0001;
-		text-shadow: 0px -5px 24px #000,
-					 1px 5px 4px red;
+		color: rgba(0, 0, 0, 0.4);
 		letter-spacing: 4px;
-		animation: showText 5s ease-in-out forwards;		
+		width: 100%;
+		/* text-shadow: 0px -5px 24px #000, 1px 5px 4px red; 
+		animation: showText 5s ease-in-out forwards; */
 	}
 
 	> div {
 		display: grid;
 		place-items: center;
-		height: 100%;
-		grid-template-columns: repeat(3, 1fr);
+		height: fit-content;
+		// grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: repeat(3, var(--box-size));
 		width: 100%;
+		align-content: center;
+    	justify-content: center;
 
 		&.blur {
 			filter: blur(3)
@@ -76,5 +79,44 @@
 		text-shadow: 0px -5px 24px #000,
 					 1px 5px 4px red,
 					 4px 4px 4px rgba(255, 0, 0, 0.472);
+	}
+}
+
+@media (max-width: 720px) {
+	:root {
+		--box-size: 170px;	
+	}
+	#root {
+		> div {
+			width: 90%;
+			// height: 90%;
+		}
+	}
+}
+
+@media (max-width: 580px) {
+	:root {
+		--box-size: 150px;	
+	}
+	#root {
+		// height: calc(100vh - (4rem * 2) - 2rem);
+		> h1 {
+			font-size: 5rem;
+		}
+		> div {
+			width: 80%;
+			// height: 80%;
+		}
+	}
+}
+
+@media (max-width: 420px) {
+	:root {
+		--box-size: 100px;	
+	}
+	#root {
+		> h1 {
+			font-size: 4rem;
+		}
 	}
 }

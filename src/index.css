@@ -11,15 +11,15 @@
 }
 
 body {
-	font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-	padding: 2rem;
+	/* font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif; */
+	/* padding: 2rem; */
 	display: flex;
 	place-items: center;
 	align-items: center;
 	justify-content: center;
 	height: 100vh;
-	background: linear-gradient(to top, red, black),
-		linear-gradient(to bottom, black, red);
+	/* background: linear-gradient(to top, red, black),
+		linear-gradient(to bottom, black, red); */
 }
 
 @font-face {

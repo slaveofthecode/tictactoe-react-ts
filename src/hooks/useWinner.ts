@@ -14,7 +14,7 @@ const useWinner = () => {
 					result && setWinner(grid[i][0]);
 				}
 			}
-
+			console.log(result);
 			return result;
 		};
 

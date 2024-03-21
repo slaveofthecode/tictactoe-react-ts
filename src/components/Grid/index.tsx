@@ -1,4 +1,4 @@
-import Button from '../common/Button'
+import Cell from '../common/Cell';
 
 type Props = {
     grid: string[][],
@@ -12,7 +12,8 @@ const index = ({ grid, handleOnClick, isGameFinished} : Props) => {
         {
           grid.map((row: string[],indexRow: number ) => {
             return row.map( (cell, indexCol)=> (
-                <Button 
+                <Cell 
+                    key={`${indexRow}${indexCol}`}
                     id={`${indexRow}${indexCol}`}
                     text={cell}
                     onClick={()=>handleOnClick(indexRow,indexCol)}

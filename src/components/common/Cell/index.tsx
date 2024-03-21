@@ -10,7 +10,7 @@ const index = ({ id, onClick, text }: Props) => {
   return (
     <>
         <button
-            key={id} 
+            id={id} 
             className={styles.cell}
             onClick={onClick} 
             disabled={!!text}
