@@ -72,6 +72,9 @@
 	}
 	to {
 		filter: blur(0);
-		color: #0006;
+		color: #0008;
+		text-shadow: 0px -5px 24px #000,
+					 1px 5px 4px red,
+					 4px 4px 4px rgba(255, 0, 0, 0.472);
 	}
 }

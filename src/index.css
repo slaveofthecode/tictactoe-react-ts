@@ -21,3 +21,8 @@ body {
 	background: linear-gradient(to top, red, black),
 		linear-gradient(to bottom, black, red);
 }
+
+@font-face {
+	font-family: "SlacksideOne-Regular";
+	src: url("../src/fonts/SlacksideOne-Regular.ttf");
+}
