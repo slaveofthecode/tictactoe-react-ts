@@ -40,6 +40,25 @@
 		}
 	}
 
+	> footer {
+		display: flex;
+		justify-content: center;
+		padding-block: 1rem;
+
+		.players {
+			> span { 
+				margin-inline: .15rem; 
+				filter: sepia(1);
+				opacity: .5;
+
+				&.currentPlayer {
+					filter: sepia(0);
+					opacity: .8;
+				}
+			}
+		}
+	}
+
 	.alert-container {
 		position: absolute;
 		top: 0;

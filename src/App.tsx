@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import './App.scss';
 import Alert from './components/Alert';
+import Footer from './components/Footer';
 import Grid from './components/Grid';
 import Header from './components/Header';
 import { PLAYER } from './enum';
@@ -44,6 +45,7 @@ function App() {
         handleOnClick={handleOnClick} 
         isGameOver={!!winner || grid.every( row => row.every( cell => cell !== ''))}
       />
+      <Footer currentPlayer={turn} />
       {
         winner 
           ? <Alert 
