@@ -13,7 +13,12 @@
 body {
 	height: 100vh;
 	overflow: hidden;
+	background-size: cover;
+	background-position: center center;
+	background-repeat: repeat;
+	background-image: url("data:image/svg+xml;utf8,%3Csvg viewBox=%220 0 2000 1000%22 xmlns=%22http:%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cmask id=%22b%22 x=%220%22 y=%220%22 width=%222000%22 height=%221000%22%3E%3Cpath fill=%22url(%23a)%22 d=%22M0 0h2000v1000H0z%22%2F%3E%3C%2Fmask%3E%3Cpath fill=%22%23fff%22 d=%22M0 0h2000v1000H0z%22%2F%3E%3Cg style=%22transform-origin:center center%22 stroke=%22%23ddddddb3%22 stroke-width=%223.2%22 mask=%22url(%23b)%22%3E%3Cpath fill=%22%23dddddd6a%22 d=%22M0 0h87v87H0z%22%2F%3E%3Cpath fill=%22%23dddddd33%22 d=%22M348 0h87v87h-87z%22%2F%3E%3Cpath fill=%22none%22 d=%22M696 0h87v87h-87z%22%2F%3E%3Cpath fill=%22%23dddddd12%22 d=%22M870 0h87v87h-87z%22%2F%3E%3Cpath fill=%22none%22 d=%22M957 0h87v87h-87zM1044 0h87v87h-87zM1131 0h87v87h-87z%22%2F%3E%3Cpath fill=%22%23dddddd9a%22 d=%22M1392 0h87v87h-87z%22%2F%3E%3Cpath fill=%22%23dddddd08%22 d=%22M1653 0h87v87h-87z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1827 0h87v87h-87zM1914 0h87v87h-87z%22%2F%3E%3Cpath fill=%22%23dddddd7a%22 d=%22M0 87h87v87H0z%22%2F%3E%3Cpath fill=%22none%22 d=%22M174 87h87v87h-87zM261 87h87v87h-87zM348 87h87v87h-87zM696 87h87v87h-87z%22%2F%3E%3Cpath fill=%22%23dddddd50%22 d=%22M783 87h87v87h-87z%22%2F%3E%3Cpath fill=%22%23dddddd82%22 d=%22M957 87h87v87h-87z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1131 87h87v87h-87zM1218 87h87v87h-87z%22%2F%3E%3Cpath fill=%22%23dddddd26%22 d=%22M1392 87h87v87h-87z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1566 87h87v87h-87z%22%2F%3E%3Cpath fill=%22%23dddddd30%22 d=%22M1740 87h87v87h-87z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1827 87h87v87h-87zM0 174h87v87H0z%22%2F%3E%3Cpath fill=%22%23dddddd80%22 d=%22M87 174h87v87H87z%22%2F%3E%3Cpath fill=%22none%22 d=%22M261 174h87v87h-87zM348 174h87v87h-87zM609 174h87v87h-87zM870 174h87v87h-87zM957 174h87v87h-87z%22%2F%3E%3Cpath fill=%22%23dddddd72%22 d=%22M1218 174h87v87h-87z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1653 174h87v87h-87zM87 261h87v87H87zM348 261h87v87h-87zM435 261h87v87h-87zM696 261h87v87h-87zM1044 261h87v87h-87zM1131 261h87v87h-87zM0 348h87v87H0zM87 348h87v87H87z%22%2F%3E%3Cpath fill=%22%23dddddd20%22 d=%22M174 348h87v87h-87z%22%2F%3E%3Cpath fill=%22none%22 d=%22M435 348h87v87h-87zM609 348h87v87h-87zM783 348h87v87h-87zM870 348h87v87h-87zM957 348h87v87h-87zM1044 348h87v87h-87zM1218 348h87v87h-87zM1305 348h87v87h-87z%22%2F%3E%3Cpath fill=%22%23dddddd36%22 d=%22M1566 348h87v87h-87z%22%2F%3E%3Cpath fill=%22%23dddddda8%22 d=%22M1740 348h87v87h-87z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1914 348h87v87h-87zM0 435h87v87H0zM87 435h87v87H87z%22%2F%3E%3Cpath fill=%22%23dddddd9a%22 d=%22M174 435h87v87h-87z%22%2F%3E%3Cpath fill=%22%23dddddd54%22 d=%22M348 435h87v87h-87z%22%2F%3E%3Cpath fill=%22none%22 d=%22M435 435h87v87h-87zM696 435h87v87h-87zM783 435h87v87h-87zM1218 435h87v87h-87zM1305 435h87v87h-87zM1392 435h87v87h-87zM1479 435h87v87h-87zM1566 435h87v87h-87zM1827 435h87v87h-87zM0 522h87v87H0z%22%2F%3E%3Cpath fill=%22%23dddddd26%22 d=%22M174 522h87v87h-87z%22%2F%3E%3Cpath fill=%22%23dddddd20%22 d=%22M348 522h87v87h-87z%22%2F%3E%3Cpath fill=%22none%22 d=%22M522 522h87v87h-87zM609 522h87v87h-87zM696 522h87v87h-87zM783 522h87v87h-87zM957 522h87v87h-87zM1044 522h87v87h-87zM1131 522h87v87h-87zM1305 522h87v87h-87zM1740 522h87v87h-87z%22%2F%3E%3Cpath fill=%22%23dddddd2f%22 d=%22M87 609h87v87H87z%22%2F%3E%3Cpath fill=%22%23dddddd36%22 d=%22M261 609h87v87h-87z%22%2F%3E%3Cpath fill=%22%23dddddd1d%22 d=%22M522 609h87v87h-87z%22%2F%3E%3Cpath fill=%22none%22 d=%22M783 609h87v87h-87zM957 609h87v87h-87zM1044 609h87v87h-87z%22%2F%3E%3Cpath fill=%22%23dddddd8f%22 d=%22M1131 609h87v87h-87z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1218 609h87v87h-87zM1479 609h87v87h-87zM1566 609h87v87h-87zM1653 609h87v87h-87zM1740 609h87v87h-87zM0 696h87v87H0z%22%2F%3E%3Cpath fill=%22%23dddddd69%22 d=%22M87 696h87v87H87z%22%2F%3E%3Cpath fill=%22%23dddddd1f%22 d=%22M261 696h87v87h-87z%22%2F%3E%3Cpath fill=%22%23dddddd4c%22 d=%22M348 696h87v87h-87z%22%2F%3E%3Cpath fill=%22none%22 d=%22M609 696h87v87h-87zM870 696h87v87h-87zM957 696h87v87h-87z%22%2F%3E%3Cpath fill=%22%23dddddd4f%22 d=%22M1131 696h87v87h-87z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1218 696h87v87h-87zM1392 696h87v87h-87zM1479 696h87v87h-87z%22%2F%3E%3Cpath fill=%22%23dddddd58%22 d=%22M1566 696h87v87h-87z%22%2F%3E%3Cpath fill=%22%23dddddd56%22 d=%22M1740 696h87v87h-87z%22%2F%3E%3Cpath fill=%22none%22 d=%22M87 783h87v87H87zM261 783h87v87h-87zM609 783h87v87h-87zM696 783h87v87h-87zM870 783h87v87h-87zM957 783h87v87h-87zM1044 783h87v87h-87zM1131 783h87v87h-87zM1305 783h87v87h-87zM1392 783h87v87h-87zM1479 783h87v87h-87zM1566 783h87v87h-87zM1740 783h87v87h-87zM1827 783h87v87h-87z%22%2F%3E%3Cpath fill=%22%23dddddd96%22 d=%22M1914 783h87v87h-87z%22%2F%3E%3Cpath fill=%22none%22 d=%22M0 870h87v87H0zM174 870h87v87h-87zM261 870h87v87h-87zM435 870h87v87h-87zM522 870h87v87h-87z%22%2F%3E%3Cpath fill=%22%23dddddd85%22 d=%22M609 870h87v87h-87z%22%2F%3E%3Cpath fill=%22none%22 d=%22M870 870h87v87h-87zM1044 870h87v87h-87zM1305 870h87v87h-87zM1392 870h87v87h-87zM1479 870h87v87h-87z%22%2F%3E%3Cpath fill=%22%23dddddd34%22 d=%22M1566 870h87v87h-87z%22%2F%3E%3Cpath fill=%22%23dddddd17%22 d=%22M1653 870h87v87h-87z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1740 870h87v87h-87zM87 957h87v87H87zM174 957h87v87h-87zM348 957h87v87h-87zM609 957h87v87h-87z%22%2F%3E%3Cpath fill=%22%23dddddd6a%22 d=%22M783 957h87v87h-87z%22%2F%3E%3Cpath fill=%22none%22 d=%22M870 957h87v87h-87z%22%2F%3E%3Cpath fill=%22%23dddddd47%22 d=%22M1131 957h87v87h-87z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1218 957h87v87h-87z%22%2F%3E%3Cpath fill=%22%23dddddd73%22 d=%22M1392 957h87v87h-87z%22%2F%3E%3C%2Fg%3E%3Cdefs%3E%3CradialGradient id=%22a%22%3E%3Cstop offset=%2250%25%22 stop-color=%22%23fff%22 stop-opacity=%220%22%2F%3E%3Cstop offset=%221%22 stop-color=%22%23fff%22 stop-opacity=%22.5%22%2F%3E%3C%2FradialGradient%3E%3C%2Fdefs%3E%3C%2Fsvg%3E");
 }
+/* https://www.magicpattern.design/tools/grid-background-pattern-generator */
 
 @font-face {
 	font-family: "SlacksideOne-Regular";
@@ -27,16 +32,16 @@ body {
 
 	body {
 		overflow: auto;
+	}
 
-		#root {
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			height: fit-content;
+	body > #root {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: fit-content;
+	}
 
-			> h1 {
-				font-size: 3rem;
-			}
-		}
+	body > #root > h1 {
+		font-size: 3rem;
 	}
 }
