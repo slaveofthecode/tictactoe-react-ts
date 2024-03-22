@@ -1,6 +1,14 @@
-const index = () => {
+type Props = {
+  isGameOver: boolean
+}
+
+const index = ({ isGameOver }: Props) => {
   return (
-    <h1>Tic Tac Toe</h1>
+    <h1
+    className={`${isGameOver ? 'game-over' : ''}`}
+    >
+      Tic Tac Toe
+    </h1>
   )
 }
 

@@ -11,18 +11,32 @@
 }
 
 body {
-	/* font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif; */
-	/* padding: 2rem; */
-	display: flex;
-	place-items: center;
-	align-items: center;
-	justify-content: center;
 	height: 100vh;
-	/* background: linear-gradient(to top, red, black),
-		linear-gradient(to bottom, black, red); */
+	overflow: hidden;
 }
 
 @font-face {
 	font-family: "SlacksideOne-Regular";
 	src: url("../src/fonts/SlacksideOne-Regular.ttf");
+}
+
+@media screen and (orientation: landscape) and (max-width: 844px) {
+	:root {
+		--box-size: 5rem;
+	}
+
+	body {
+		overflow: auto;
+
+		#root {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			height: fit-content;
+
+			> h1 {
+				font-size: 3rem;
+			}
+		}
+	}
 }

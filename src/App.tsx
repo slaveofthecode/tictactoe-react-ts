@@ -39,13 +39,17 @@ function App() {
 
   return (
     <>
-      <Header />
+      <Header isGameOver={!!winner || grid.every( row => row.every( cell => cell !== ''))}/>
       <Grid 
         grid={grid} 
         handleOnClick={handleOnClick} 
         isGameOver={!!winner || grid.every( row => row.every( cell => cell !== ''))}
       />
-      <Footer currentPlayer={turn} />
+      {
+        !(!!winner || grid.every( row => row.every( cell => cell !== ''))) && (
+          <Footer currentPlayer={turn} />
+        )
+      }
       {
         winner 
           ? <Alert 

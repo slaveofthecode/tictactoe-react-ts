@@ -15,10 +15,12 @@ const Alert = ({ mainText, subText, onClickUnMonted}: Props) => {
 
   if (show)
     return (
-      <div className="alert-container" onClick={()=> {
+      <div 
+        className={`alert-container ${subText !== 'draw' && 'winner'}`} 
+        onClick={()=> {
           setShow(false);
           onClickUnMonted();        
-      }}
+        }}
       >
           <span>{ mainText }</span>
           <strong>{ subText }</strong> 
