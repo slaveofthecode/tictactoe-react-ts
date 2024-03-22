@@ -1,10 +1,9 @@
 .cell {
     border: 1px solid #0002;
     width: var(--box-size);
-    height: var(--box-size);    
-    // max-width: 100%;
-    // max-height: 100%;
-    font-size: 4rem;
+    height: 100%;
+    min-height: var(--box-size);
+    font-size: 8rem;
     color: #000;
     cursor: pointer;
     // text-shadow: 0px 0px 50px #000,
@@ -12,6 +11,9 @@
     //              -5px 0px 50px #0007,
     //              0px 5px 50px #0007,
     //              0px -5px 50px #0007;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     &:disabled {
         opacity: .75;
@@ -36,9 +38,18 @@
 
 }
 
-// @keyframes scale {
-//     to {
-//         filter: invert(2);
-//         border: none;
-//     }
-// }
+@media (max-width: 840px) {
+    .cell { font-size: 7rem; }
+}
+
+@media (max-width: 720px) {
+    .cell { font-size: 6rem; }
+}
+
+@media (max-width: 580px) {
+    .cell { font-size: 5rem; }
+}
+
+@media (max-width: 480px) {
+    .cell { font-size: 4rem; }
+}

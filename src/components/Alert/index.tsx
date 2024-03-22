@@ -4,9 +4,10 @@ import { useState } from "react";
 type Props = {
     mainText: string,
     subText: string
+    onClickUnMonted: () => void
 }
 
-const Alert = ({ mainText, subText}: Props) => {
+const Alert = ({ mainText, subText, onClickUnMonted}: Props) => {
 
   const [ show, setShow ] = useState<boolean>(!!mainText);
 
@@ -14,7 +15,11 @@ const Alert = ({ mainText, subText}: Props) => {
 
   if (show)
     return (
-      <div className="alert-container" onClick={()=>setShow(false)}>
+      <div className="alert-container" onClick={()=> {
+          setShow(false);
+          onClickUnMonted();        
+      }}
+      >
           <span>{ mainText }</span>
           <strong>{ subText }</strong> 
       </div>

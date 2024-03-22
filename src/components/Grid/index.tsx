@@ -3,12 +3,12 @@ import Cell from '../common/Cell';
 type Props = {
     grid: string[][],
     handleOnClick: (r: number, c: number) => void,
-    isGameFinished: boolean
+    isGameOver: boolean
 }
 
-const index = ({ grid, handleOnClick, isGameFinished} : Props) => {
+const index = ({ grid, handleOnClick, isGameOver} : Props) => {
   return (
-    <div className={`${isGameFinished ? 'blur' : ''}`} >
+    <div className={`${isGameOver ? 'blur' : ''}`} >
         {
           grid.map((row: string[],indexRow: number ) => {
             return row.map( (cell, indexCol)=> (

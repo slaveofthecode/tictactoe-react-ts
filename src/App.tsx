@@ -1,20 +1,24 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useState } from 'react';
 import './App.scss';
 import Alert from './components/Alert';
 import Grid from './components/Grid';
 import Header from './components/Header';
+import { PLAYER } from './enum';
 import useGrid from './hooks/useGrid';
 import useWinner from './hooks/useWinner';
+
+const FIRST_PLAYER = Math.round(Math.random()) ? PLAYER.X : PLAYER.X;
 
 function App() {
 
   const { grid, setGrid } = useGrid();
-  const { winner, validate } = useWinner();
-
-  const [ turn, setTurn] = useState('X');
-
+  const { winner, validate, setWinner } = useWinner();
+  
+  const [ turn, setTurn] = useState(FIRST_PLAYER);
+  
   const handleOnClick = (indexRow:number, indexCol:number) => {    
-    setTurn( t => t === 'X' ? 'O' : 'X');
+    setTurn( t => t === PLAYER.X ? PLAYER.O : PLAYER.X);
 
     const clonGrid = grid;
     clonGrid[indexRow][indexCol] = turn;  
@@ -23,24 +27,38 @@ function App() {
     validate.isWinner(clonGrid);
   }
 
+  const onClickUnMontedAlert = () => {
+    setGrid([
+      ["", "", ""],
+      ["", "", ""],
+      ["", "", ""],
+    ]);
+    setWinner(null);
+  }
+
   return (
     <>
       <Header />
-        <Grid 
-          grid={grid} 
-          handleOnClick={handleOnClick} 
-          isGameFinished={ 
-            !!winner || 
-            grid.every( row => row.every( cell => cell !== ''))
-          }
-        />
-        {
-          winner 
-            ? <Alert mainText={winner} subText={'winner!'} />
-            : grid.every( row => row.every( cell => cell !== ''))
-              && <Alert mainText={'XO'} subText={'draw'} /> 
-              
-        }
+      <Grid 
+        grid={grid} 
+        handleOnClick={handleOnClick} 
+        isGameOver={!!winner || grid.every( row => row.every( cell => cell !== ''))}
+      />
+      {
+        winner 
+          ? <Alert 
+              mainText={winner} 
+              subText={'winner!'} 
+              onClickUnMonted={onClickUnMontedAlert}
+            />
+          : grid.every( row => row.every( cell => cell !== ''))
+            && <Alert 
+                  mainText={`${PLAYER.X}${PLAYER.O}`} 
+                  subText={'draw'} 
+                  onClickUnMonted={onClickUnMontedAlert}
+                /> 
+            
+      }
     </>
   )
 }
