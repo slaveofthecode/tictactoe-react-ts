@@ -109,7 +109,8 @@
 
 @media (max-height: 840px) {
 	#root {
-		justify-content: space-evenly;		
+		justify-content: start;
+		padding-top: 6rem;
 	}
 }
 
@@ -140,7 +141,7 @@
 	#root {
 		> h1 {
 			font-size: 4rem;
-			
+
 			&.game-over {
 				transform: none;
 				font-size: 4rem;
