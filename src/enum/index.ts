@@ -1,4 +1,8 @@
+// export const PLAYER = {
+// 	X: `♥️`,
+// 	O: `💩`,
+// };
 export const PLAYER = {
-	X: `♥️`,
-	O: `💩`,
+	X: "X",
+	O: "O",
 };
